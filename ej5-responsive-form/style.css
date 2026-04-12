@@ -1,0 +1,167 @@
+:root {
+  --color-navegacion-fondo: #1e3a8a;
+  --color-titulos: #1e3a8a;
+  --color-fondo: #f4f4f4;
+  --color-blanco: #ffffff;
+  --color-texto: #222222;
+  --color-borde: #d1d5db;
+  --color-back-link: #0c0c0c;
+
+  --sombra: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-fondo); 
+  color: var(--color-texto);
+  margin: 20px;
+  padding: 20px;
+
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+h1 {
+  color: var(--color-titulos); 
+}
+
+p {
+  line-height: 1.5;
+}
+
+
+nav {
+  background-color: var(--color-navegacion-fondo); 
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  width: 80%;
+}
+
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+li {
+  margin: 0;
+}
+
+
+a {
+  text-decoration: none; 
+  color: var(--color-blanco); 
+  font-weight: bold;
+}
+
+a:hover {
+  color: #93c5fd; 
+}
+
+/* clase para el los links a los archivos */
+.linkdw {
+  background-color: var(--color-back-link); 
+  padding: 8px 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--color-borde); 
+  display: inline-block;
+}
+
+/* cajas */
+.seccion {
+  background-color: var(--color-blanco);
+  padding: 40px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--color-borde);
+  width: 100%;
+
+  box-shadow: var(--sombra);
+}
+
+/* formulario */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formulario label {
+  font-weight: bold;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.formulario textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formulario button {
+  background-color: var(--color-navegacion-fondo);
+  color: var(--color-blanco);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #163172;
+}
+
+/* para la adaptabilidad (media queries) */
+@media (max-width: 768px) {
+  body {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .seccion {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .seccion img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+}

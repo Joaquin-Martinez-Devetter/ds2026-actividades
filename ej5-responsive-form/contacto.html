@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <br>
+  <nav>
+    <ul>
+      <li><a href="perfil.html">Inicio</a></li>
+      <li><a href="estudios.html">Estudios</a></li>
+      <li><a href="experiencia.html">Experiencia</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="seccion">
+    <h1>Contacto</h1>
+
+    <form class="formulario">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required minlength="4">
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" required minlength="10"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
