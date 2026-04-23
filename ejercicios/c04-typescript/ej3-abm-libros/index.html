@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 3</title>
+</head>
+<body>
+    <h1>Catálogo</h1>
+
+    <input type="text" id="filtroAutor">
+
+    <button id="filtrar">Filtro</button>
+    <button id="mostrarDisponibles">Solo disponibles</button>
+    <button id="mostrarTodos">Ver todos</button>
+
+    <h2>Agregar Libros</h2>
+
+    <input type="text" id="titulo" placeholder="Título">
+    <input type="text" id="autor" placeholder="Autor">
+    <input type="number" id="precio" placeholder="Precio">
+    <input type="text" id="genero" placeholder="Género">
+    <select id="disponible">
+        <option value="true">Disponible</option>
+        <option value="false">No disponible</option>
+    </select>
+
+    <button id="agregar">Agregar</button>
+
+    <div id="errorForm"></div>
+
+    <ul id="listado"></ul>
+    <p id="stats"></p>
+
+    <script src="app.js"></script>
+
+    
+</body>
+</html>
