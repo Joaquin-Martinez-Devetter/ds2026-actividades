@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Contacto</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
-            <a class="navbar-brand" href="index.html"> Biblioteca </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="colapse" data-bs-target="#menuNavbar">
-                <span class="=navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="index.html"> <i class="bi bi-person-lines-fill"></i> Biblioteca </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
             </button>
 
                 <ul class="navbar-nav ms-auto">
@@ -32,6 +34,83 @@
         </div>
 
     </nav>
+
+    <section class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow p-4">
+                    <h1 class="text-center mb-4">
+                        Formulario De Contacto
+                    </h1>
+                    <!--acá hago el formulario-->
+                    <form>
+                        <!--Nombre-->
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Nombre
+                            </label>
+                            <input 
+                                type="text"
+                                class="form-control"
+                                placeholder="Ingresa tu nombre"
+                                required
+                                minlength="3"
+                                maxlength="25"
+                                pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
+                            >
+                        </div>
+                        <!--Email-->
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                placeholder="nombre@gmail.com"
+                                required
+                            >
+                        </div>
+                        <!--Asunto con selección-->
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Asunto
+                            </label>
+                            <select class="form-select">
+                                <option>Consulta</option>
+                                <option>Reclamo</option>
+                                <option>Sugerencia</option>
+                            </select>
+                        </div>
+                        <!--Mensaje a escribir-->
+                        <div class="mb-4">
+                            <label class="form-label">
+                                Mensaje
+                            </label>
+                            <textarea
+                                class="form-control"
+                                rows="5"
+                                placeholder="Escribe aquí tu mensaje.."
+                                required
+                                minlength="10"
+                                maxlength="500"
+                            ></textarea>
+                        </div>
+                        <!--botón-->
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-lg">
+                                Enviar
+                            </button>
+                        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <script src="js/data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
