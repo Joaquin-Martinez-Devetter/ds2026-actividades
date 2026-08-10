@@ -1,0 +1,88 @@
+@baseUrl = http://localhost:3000
+
+### 1. Listar libros
+GET {{baseUrl}}/api/libros
+
+### 2. Obtener libro existente
+GET {{baseUrl}}/api/libros/1
+
+### 3. Libro inexistente - 404
+GET {{baseUrl}}/api/libros/999
+
+### 4. Crear libro
+POST {{baseUrl}}/api/libros
+Content-Type: application/json
+
+{
+  "titulo": "Rayuela",
+  "autor": "Julio Cortázar",
+  "precio": 27000,
+  "imagen": "https://covers.openlibrary.org/b/isbn/9788437604572-L.jpg",
+  "disponible": true
+}
+
+### 5. Actualizar libro existente
+PUT {{baseUrl}}/api/libros/2
+Content-Type: application/json
+
+{
+  "titulo": "1984 - Edición actualizada",
+  "autor": "George Orwell",
+  "precio": 28000,
+  "imagen": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
+  "disponible": false
+}
+
+### 6. Actualizar libro inexistente - 404
+PUT {{baseUrl}}/api/libros/999
+Content-Type: application/json
+
+{
+  "titulo": "Libro inexistente",
+  "autor": "Autor desconocido",
+  "precio": 10000,
+  "imagen": "https://example.com/libro.jpg",
+  "disponible": true
+}
+
+### 7. Eliminar libro existente
+DELETE {{baseUrl}}/api/libros/3
+
+### 8. Listar autores
+GET {{baseUrl}}/api/autores
+
+### 9. Obtener autor existente
+GET {{baseUrl}}/api/autores/1
+
+### 10. Autor inexistente - 404
+GET {{baseUrl}}/api/autores/999
+
+### 11. Crear autor
+POST {{baseUrl}}/api/autores
+Content-Type: application/json
+
+{
+  "nombre": "Julio Cortázar",
+  "nacionalidad": "Argentina"
+}
+
+### 12. Actualizar autor existente
+PUT {{baseUrl}}/api/autores/2
+Content-Type: application/json
+
+{
+  "nombre": "George Orwell",
+  "nacionalidad": "Británica"
+}
+
+### 13. Actualizar autor inexistente - 404
+PUT {{baseUrl}}/api/autores/999
+Content-Type: application/json
+
+{
+  "nombre": "Autor inexistente",
+  "nacionalidad": "Desconocida"
+}
+
+### 14. Eliminar autor existente
+DELETE {{baseUrl}}/api/autores/3
