@@ -1,0 +1,150 @@
+@baseUrl = http://localhost:3000
+
+
+### ==================================================
+### LIBROS
+### ==================================================
+
+### 1 - Listar libros
+GET {{baseUrl}}/api/libros
+
+
+### 2 - Obtener libro existente
+GET {{baseUrl}}/api/libros/1
+
+
+### 3 - Libro inexistente - 404
+GET {{baseUrl}}/api/libros/9999
+
+
+### 4 - Crear libro
+POST {{baseUrl}}/api/libros
+Content-Type: application/json
+
+{
+  "titulo": "Rayuela",
+  "precio": 27000,
+  "imagen": "https://example.com/rayuela.jpg",
+  "disponible": true,
+  "autorId": 1
+}
+
+
+### 5 - Actualizar libro
+PUT {{baseUrl}}/api/libros/1
+Content-Type: application/json
+
+{
+  "precio": 31000
+}
+
+
+### 6 - Eliminar libro inexistente - 404
+DELETE {{baseUrl}}/api/libros/9999
+
+
+### ==================================================
+### AUTORES
+### ==================================================
+
+### 7 - Listar autores
+GET {{baseUrl}}/api/autores
+
+
+### 8 - Obtener autor
+GET {{baseUrl}}/api/autores/1
+
+
+### 9 - Crear autor
+POST {{baseUrl}}/api/autores
+Content-Type: application/json
+
+{
+  "nombre": "Julio Cortázar",
+  "nacionalidad": "Argentina"
+}
+
+
+### 10 - Actualizar autor
+PUT {{baseUrl}}/api/autores/2
+Content-Type: application/json
+
+{
+  "nacionalidad": "Británica"
+}
+
+
+### ==================================================
+### CATEGORÍAS
+### ==================================================
+
+### 11 - Listar categorías
+GET {{baseUrl}}/api/categorias
+
+
+### 12 - Crear categoría
+POST {{baseUrl}}/api/categorias
+Content-Type: application/json
+
+{
+  "nombre": "Ciencia ficción"
+}
+
+
+### ==================================================
+### CASOS DE ERROR C17
+### ==================================================
+
+### 13 - 400 - libro sin título
+POST {{baseUrl}}/api/libros
+Content-Type: application/json
+
+{
+  "precio": 5000,
+  "imagen": "https://example.com/libro.jpg",
+  "autorId": 1
+}
+
+
+### 14 - 400 - id inválido
+GET {{baseUrl}}/api/libros/abc
+
+
+### 15 - 400 - id negativo
+GET {{baseUrl}}/api/libros/-5
+
+
+### 16 - 404 - recurso inexistente
+GET {{baseUrl}}/api/libros/9999
+
+
+### 17 - 404 - actualizar libro inexistente
+PUT {{baseUrl}}/api/libros/9999
+Content-Type: application/json
+
+{
+  "precio": 25000
+}
+
+
+### 18 - 409 - autor duplicado
+POST {{baseUrl}}/api/autores
+Content-Type: application/json
+
+{
+  "nombre": "J. K. Rowling",
+  "nacionalidad": "Británica"
+}
+
+
+### 19 - 409 - borrar autor con libros relacionados
+DELETE {{baseUrl}}/api/autores/1
+
+
+### 20 - 409 - categoría duplicada
+POST {{baseUrl}}/api/categorias
+Content-Type: application/json
+
+{
+  "nombre": "Novela"
+}
