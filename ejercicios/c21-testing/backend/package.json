@@ -2,11 +2,13 @@
   "name": "libreria-api",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "test": "vitest run",
-    "test:watch": "vitest"
-  },
+"scripts": {
+  "dev": "tsx watch src/index.ts",
+  "build": "tsc -p tsconfig.build.json",
+  "start": "node dist/index.js",
+  "test": "vitest run",
+  "test:watch": "vitest"
+},
   "dependencies": {
     "@prisma/adapter-pg": "^7.9.1",
     "@prisma/client": "^7.9.1",
