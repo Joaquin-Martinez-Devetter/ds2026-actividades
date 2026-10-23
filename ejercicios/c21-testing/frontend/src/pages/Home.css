@@ -1,0 +1,112 @@
+
+.home-container {
+  padding-top: 55px;
+  padding-bottom: 60px;
+}
+
+.home-bienvenida {
+  text-align: center;
+  padding: 60px 25px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #f3e8ff, #fce7f3);
+  box-shadow: 0 12px 35px rgba(100, 50, 150, 0.1);
+}
+
+.home-icono {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.home-bienvenida h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: #2e2050;
+  margin-bottom: 18px;
+}
+
+.home-bienvenida p {
+  font-size: 18px;
+  color: #5b4b72;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.home-acciones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.home-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 25px;
+  background: #9333ea;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.home-boton:hover {
+  background: #7e22ce;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.home-boton-secundario {
+  background: white;
+  color: #7e22ce;
+  border: 2px solid #c084fc;
+}
+
+.home-boton-secundario:hover {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.home-mensaje {
+  text-align: center;
+  margin-top: 55px;
+}
+
+.home-mensaje h2 {
+  color: #2e2050;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.home-mensaje p {
+  color: #6b6375;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+@media (max-width: 576px) {
+  .home-container {
+    padding-top: 25px;
+  }
+
+  .home-bienvenida {
+    padding: 40px 18px;
+  }
+
+  .home-bienvenida p {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-boton {
+    transition: none;
+  }
+
+  .home-boton:hover {
+    transform: none;
+  }
+}

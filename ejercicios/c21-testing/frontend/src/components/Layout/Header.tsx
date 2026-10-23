@@ -1,48 +1,82 @@
+
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import "./Header.css";
 
 function Header() {
   const { usuario, logout, tieneRol } = useAuth();
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar expand="lg" className="libreria-navbar">
       <Container>
-        <Navbar.Brand as={Link} to="/">
-          Librería React
+        <Navbar.Brand as={Link} to="/" className="libreria-logo">
+          📚 Mi Librería
         </Navbar.Brand>
 
-        <Nav className="ms-auto">
-          <Nav.Link as={Link} to="/">
-            Inicio
-          </Nav.Link>
+        <Navbar.Toggle
+          aria-controls="menu-libreria"
+          className="libreria-toggle"
+        />
 
-          <Nav.Link as={Link} to="/catalogo">
-            Catálogo
-          </Nav.Link>
+        <Navbar.Collapse id="menu-libreria">
+          <Nav className="ms-auto align-items-lg-center gap-2 mt-3 mt-lg-0">
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                `nav-boton ${isActive ? "activo" : ""}`
+              }
+            >
+              Inicio
+            </NavLink>
 
-          {tieneRol("ADMIN") && (
-            <Nav.Link as={Link} to="/libros/nuevo">
-              Nuevo Libro
-            </Nav.Link>
-          )}
+            <NavLink
+              to="/catalogo"
+              className={({ isActive }) =>
+                `nav-boton ${isActive ? "activo" : ""}`
+              }
+            >
+              Catálogo
+            </NavLink>
 
-          {usuario ? (
-            <>
-              <Navbar.Text className="me-3">
-                Hola, {usuario.nombre}
-              </Navbar.Text>
+            {tieneRol("ADMIN") && (
+              <NavLink
+                to="/libros/nuevo"
+                className={({ isActive }) =>
+                  `nav-boton nav-boton-destacado ${
+                    isActive ? "activo" : ""
+                  }`
+                }
+              >
+                + Nuevo Libro
+              </NavLink>
+            )}
 
-              <Nav.Link onClick={logout}>
-                Salir
-              </Nav.Link>
-            </>
-          ) : (
-            <Nav.Link as={Link} to="/login">
-              Ingresar
-            </Nav.Link>
-          )}
-        </Nav>
+            {usuario ? (
+              <>
+                <button
+                  type="button"
+                  className="nav-boton nav-boton-salir"
+                  onClick={logout}
+                >
+                  Salir
+                </button>
+              </>
+            ) : (
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  `nav-boton nav-boton-destacado ${
+                    isActive ? "activo" : ""
+                  }`
+                }
+              >
+                Ingresar
+              </NavLink>
+            )}
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
